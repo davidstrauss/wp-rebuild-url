@@ -7,8 +7,8 @@ function rebuild_qs( $query_string ) {
 	$qs = http_build_query( $parts, null, '&', PHP_QUERY_RFC3986 );
 
 	// Remove equal signs for keys without values.
-	$qs = rtrim($qs, '=');
-	$qs = str_replace('=&', '&', $qs);
+	$qs = rtrim( $qs, '=' );
+	$qs = str_replace( '=&', '&', $qs );
 
 	return $qs;
 }
