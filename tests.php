@@ -4,7 +4,9 @@ require 'wp-config-prepend.php';
 
 $cases = [
 	'kw=123:456&pub_cr_id=789' => 'kw=123%3A456&pub_cr_id=789',
-	'kw=123%3a456&pub_cr_id=789' => 'kw=123%3A456&pub_cr_id=789'
+	'kw=123%3a456&pub_cr_id=789' => 'kw=123%3A456&pub_cr_id=789',
+	'kw=123%3a456&pub_cr_id=789&noise1=' => 'kw=123%3A456&pub_cr_id=789&noise1',
+	'kw=123%3a456&pub_cr_id=789&noise1=&more=1' => 'kw=123%3A456&pub_cr_id=789&noise1&more=1'
 ];
 
 foreach ($cases as $input => $expected) {
